@@ -1,25 +1,29 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>داشبورد</title>
     <link rel="stylesheet" href="css/index.css">
 </head>
+
 <body>
     <main class="app-layout">
         <aside class="sidebar">
             <div class="sidebar__brand">
                 <div class="brand__logo">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Sharif_University_of_Technology_logo.svg/200px-Sharif_University_of_Technology_logo.svg.png" alt="لوگو مرکز">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Sharif_University_of_Technology_logo.svg/200px-Sharif_University_of_Technology_logo.svg.png"
+                        alt="لوگو مرکز">
                 </div>
                 <div class="brand__meta">
+
                     <p class="brand__title">مرکز نوآوری لنسر شریف</p>
                     <span class="brand__subtitle">داشبورد مدیریتی</span>
                 </div>
             </div>
             <nav class="sidebar__menu">
-                
+
 
                 <div class="menu">
                     <input type="checkbox" id="menu-users" class="menu__toggle">
@@ -31,8 +35,23 @@
                         <span class="chevron" aria-hidden="true"></span>
                     </label>
                     <ul class="menu__items">
-                        <li><a href="#">اضافه کردن کاربر</a></li>
-                        <li><a href="#">لیست کاربران</a></li>
+
+                        <li><a href="user-list.html">لیست کاربران</a></li>
+                        <li><a href="add-user.html">اضافه کردن کاربر</a></li>
+                    </ul>
+                </div>
+                <div class="menu">
+                    <input type="checkbox" id="menu-courses" class="menu__toggle" checked>
+                    <label for="menu-courses" class="menu__trigger">
+                        <span class="menu__group">
+                            <span class="menu__icon" data-icon="📚"></span>
+                            <span>مدیریت دوره‌ها</span>
+                        </span>
+                        <span class="chevron" aria-hidden="true"></span>
+                    </label>
+                    <ul class="menu__items">
+                        <li><a href="course.html">لیست دوره‌ها</a></li>
+                        <li><a href="add-course.html">افزودن دوره جدید</a></li>
                     </ul>
                 </div>
 
@@ -46,7 +65,7 @@
                     <h1>مدیریت کاربران</h1>
                 </div>
                 <div class="topbar__user">
-                   
+
                     <div>
                         <strong>۰۹۱۳۸۶۳۸۳۹۷</strong>
                         <span>مدیر وب‌سایت</span>
@@ -60,7 +79,7 @@
                     <strong>30 نفر</strong>
                     <p>کل کاربران</p>
                 </article>
-                
+
                 <article class="stat-card">
                     <span class="stat-card__icon" data-icon="👁️"></span>
                     <strong>24 نفر</strong>
@@ -70,4 +89,5 @@
         </section>
     </main>
 </body>
+
 </html>

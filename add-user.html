@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>افزودن کاربر جدید</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <main class="app-layout">
+        <aside class="sidebar">
+            <div class="sidebar__brand">
+                <div class="brand__logo">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Sharif_University_of_Technology_logo.svg/200px-Sharif_University_of_Technology_logo.svg.png" alt="لوگو مرکز">
+                </div>
+                <div class="brand__meta">
+                    <p class="brand__title">مرکز نوآوری لنسر شریف</p>
+                    <span class="brand__subtitle">داشبورد مدیریتی</span>
+                </div>
+            </div>
+            <nav class="sidebar__menu">
+                <div class="menu">
+                    <input type="checkbox" id="menu-users" class="menu__toggle" checked>
+                    <label for="menu-users" class="menu__trigger">
+                        <span class="menu__group">
+                            <span class="menu__icon" data-icon="▤"></span>
+                            <span>مدیریت کاربران</span>
+                        </span>
+                        <span class="chevron" aria-hidden="true"></span>
+                    </label>
+                    <ul class="menu__items">
+                        <li><a href="index.html">داشبورد</a></li>
+                        <li><a href="user-list.html">لیست کاربران</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </aside>
+
+        <section class="workspace">
+            <header class="workspace__topbar">
+                <div class="topbar__titles">
+                    <span>مدیریت کاربران</span>
+                    <h1>افزودن کاربر جدید</h1>
+                </div>
+                <div class="topbar__user">
+                    <div>
+                        <strong>۰۹۱۳۸۶۳۸۳۹۷</strong>
+                        <span>مدیر وب‌سایت</span>
+                    </div>
+                </div>
+            </header>
+
+            <section class="workspace__content">
+                <div class="add-user-form-container">
+                    <div class="form-header">
+                        <h2>
+                            <i class="fas fa-user-plus"></i>
+                            اطلاعات کاربر جدید
+                        </h2>
+                        <p>لطفاً اطلاعات کاربر جدید را با دقت وارد نمایید.</p>
+                    </div>
+
+                    <form id="addUserForm" class="user-form">
+                        <div class="form-grid">
+                            <!-- ردیف اول -->
+                            <div class="form-group">
+                                <label for="fullName">
+                                    <i class="fas fa-user"></i>
+                                    نام و نام خانوادگی
+                                    <span class="required">*</span>
+                                </label>
+                                <input type="text" id="fullName" name="fullName" required 
+                                       placeholder="مثال: علی احمدی" autofocus>
+                                <div class="form-hint">نام کامل کاربر را به فارسی وارد کنید</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="nationalId">
+                                    <i class="fas fa-id-card"></i>
+                                    کد ملی
+                                    <span class="required">*</span>
+                                </label>
+                                <input type="text" id="nationalId" name="nationalId" required 
+                                       placeholder="مثال: ۱۲۳۴۵۶۷۸۹۰" maxlength="10" pattern="[0-9]{10}">
+                                <div class="form-hint">کد ملی باید ۱۰ رقم باشد</div>
+                            </div>
+
+                            <!-- ردیف دوم -->
+                            <div class="form-group">
+                                <label for="phoneNumber">
+                                    <i class="fas fa-phone"></i>
+                                    شماره تماس
+                                    <span class="required">*</span>
+                                </label>
+                                <input type="tel" id="phoneNumber" name="phoneNumber" required 
+                                       placeholder="مثال: ۰۹۱۲۳۴۵۶۷۸۹" pattern="09[0-9]{9}">
+                                <div class="form-hint">شماره موبایل با ۰۹ شروع شود</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email">
+                                    <i class="fas fa-envelope"></i>
+                                    ایمیل
+                                </label>
+                                <input type="email" id="email" name="email" 
+                                       placeholder="مثال: user@example.com">
+                                <div class="form-hint">ایمیل معتبر وارد کنید (اختیاری)</div>
+                            </div>
+
+                            <!-- ردیف سوم -->
+                            <div class="form-group">
+                                <label for="username">
+                                    <i class="fas fa-at"></i>
+                                    نام کاربری
+                                    <span class="required">*</span>
+                                </label>
+                                <input type="text" id="username" name="username" required 
+                                       placeholder="مثال: ali.ahmadi">
+                                <div class="form-hint">برای ورود به سیستم استفاده می‌شود</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="password">
+                                    <i class="fas fa-lock"></i>
+                                    رمز عبور
+                                    <span class="required">*</span>
+                                </label>
+                                <div class="password-input">
+                                    <input type="password" id="password" name="password" required 
+                                           placeholder="حداقل ۸ کاراکتر">
+                                    <button type="button" class="toggle-password" id="togglePassword">
+                                        <i class="fas fa-eye"></i>
+                                    </button>
+                                </div>
+                                <div class="password-strength">
+                                    <div class="strength-bar" id="strengthBar"></div>
+                                    <span class="strength-text" id="strengthText">ضعیف</span>
+                                </div>
+                            </div>
+
+                            <!-- ردیف چهارم -->
+                            <div class="form-group full-width">
+                                <label for="address">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    آدرس
+                                </label>
+                                <textarea id="address" name="address" rows="3" 
+                                          placeholder="آدرس کامل کاربر"></textarea>
+                            </div>
+
+                            <!-- ردیف پنجم -->
+                            <div class="form-group">
+                                <label for="userType">
+                                    <i class="fas fa-user-tag"></i>
+                                    نوع کاربر
+                                    <span class="required">*</span>
+                                </label>
+                                <select id="userType" name="userType" required>
+                                    <option value="" selected disabled>انتخاب کنید</option>
+                                    <option value="admin">مدیر سیستم</option>
+                                    <option value="member">دانش آموز</option>
+                                    <option value="member">والد</option>
+                                    <option value="member">معلم</option>
+                                    <option value="member">مدیر مرکز</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="status">
+                                    <i class="fas fa-circle"></i>
+                                    وضعیت
+                                    <span class="required">*</span>
+                                </label>
+                                <div class="status-options">
+                                    <label class="radio-option">
+                                        <input type="radio" name="status" value="active" checked>
+                                        <span class="radio-checkmark"></span>
+                                        <span class="radio-label">
+                                            <i class="fas fa-check-circle"></i>
+                                            فعال
+                                        </span>
+                                    </label>
+                                    <label class="radio-option">
+                                        <input type="radio" name="status" value="inactive">
+                                        <span class="radio-checkmark"></span>
+                                        <span class="radio-label">
+                                            <i class="fas fa-times-circle"></i>
+                                            غیرفعال
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="btn-cancel" onclick="window.location.href='user-list.html'">
+                                <i class="fas fa-times"></i>
+                                انصراف
+                            </button>
+                            <button type="button" class="btn-reset" id="resetForm">
+                                <i class="fas fa-redo"></i>
+                                بازنشانی فرم
+                            </button>
+                            <button type="submit" class="btn-submit">
+                                <i class="fas fa-plus"></i>
+                                افزودن کاربر
+                            </button>
+                        </div>
+                    </form>
+
+                    <!-- بخش پیش‌نمایش اطلاعات -->
+                    <div class="preview-section">
+                        <h3>
+                            <i class="fas fa-eye"></i>
+                            پیش‌نمایش اطلاعات
+                        </h3>
+                        <div class="preview-card">
+                            <div class="preview-item">
+                                <span class="preview-label">نام:</span>
+                                <span id="previewName" class="preview-value">-</span>
+                            </div>
+                            <div class="preview-item">
+                                <span class="preview-label">کد ملی:</span>
+                                <span id="previewNationalId" class="preview-value">-</span>
+                            </div>
+                            <div class="preview-item">
+                                <span class="preview-label">شماره تماس:</span>
+                                <span id="previewPhone" class="preview-value">-</span>
+                            </div>
+                            <div class="preview-item">
+                                <span class="preview-label">نوع کاربر:</span>
+                                <span id="previewType" class="preview-value">-</span>
+                            </div>
+                            <div class="preview-item">
+                                <span class="preview-label">وضعیت:</span>
+                                <span id="previewStatus" class="preview-value">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <!-- Modal برای نمایش موفقیت -->
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-icon success">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>کاربر با موفقیت اضافه شد</h3>
+            <p id="successMessage">اطلاعات کاربر جدید در سیستم ثبت گردید.</p>
+            <div class="modal-actions">
+                <button class="btn-modal btn-view" onclick="viewUserList()">
+                    <i class="fas fa-list"></i>
+                    مشاهده لیست کاربران
+                </button>
+                <button class="btn-modal btn-addmore" onclick="addAnotherUser()">
+                    <i class="fas fa-user-plus"></i>
+                    افزودن کاربر دیگر
+                </button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
