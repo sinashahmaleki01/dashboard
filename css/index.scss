@@ -734,10 +734,7 @@ section {
 }
 
 @media (max-width: 900px) {
-  body {
-    padding: 0;
-    text-align: right;
-  }
+
 
   .app-layout {
     grid-template-columns: 1fr;
@@ -814,7 +811,8 @@ section {
   backdrop-filter: blur(10px);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
-.btn{
+
+.btn {
   display: flex;
   gap: 3px;
 }
@@ -2973,3 +2971,283 @@ select option {
     justify-content: center;
   }
 }
+
+
+
+// login 
+
+
+/* کانتینر اصلی */
+.login-container {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* باکس ورود */
+.login-box {
+  margin-top: 20px;
+  background: white;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  animation: slideUp 0.5s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* هدر */
+.login-header {
+  margin-bottom: 40px;
+}
+
+.login-header h1 {
+  color: #2d3748;
+  font-size: 28px;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.login-header h1 i {
+  color: #667eea;
+}
+
+.login-header p {
+  color: #718096;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* فرم */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+/* گروه فرم */
+.form-group {
+  margin-bottom: 5px;
+}
+
+.form-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 8px;
+  p{
+    color: #2d3748;
+  }
+}
+
+.form-label i {
+  color: #667eea;
+  width: 16px;
+  text-align: center;
+}
+
+/* ورودی‌ها */
+.input-wrapper {
+  position: relative;
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 15px 50px 15px 20px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-size: 16px;
+  color: #2d3748;
+  background: #f8fafc;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.input-wrapper input:focus {
+  border-color: #667eea;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.input-wrapper input::placeholder {
+  color: #a0aec0;
+}
+
+.input-icon {
+  position: absolute;
+  left: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #a0aec0;
+  font-size: 18px;
+}
+
+.password-toggle {
+  position: absolute;
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #a0aec0;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+  font-size: 16px;
+}
+
+.password-toggle:hover {
+  color: #667eea;
+  background: #f1f5f9;
+}
+
+/* راهنمای فرم */
+.form-hint {
+  color: #718096;
+  font-size: 12px;
+  margin-top: 5px;
+  text-align: right;
+}
+
+/* دکمه‌ها */
+.form-actions {
+  margin-top: 10px;
+}
+
+.btn-login {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-login:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+.btn-login:active {
+  transform: translateY(0);
+}
+
+.btn-login:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn-login.loading {
+  background: #a0aec0;
+}
+
+.btn-login.loading i {
+  display: none;
+}
+
+.btn-login.loading::after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* پیام خطا */
+.error-message {
+  background: linear-gradient(135deg, #fed7d7 0%, #feb2b2 100%);
+  border: 2px solid #fc8181;
+  border-radius: 12px;
+  padding: 15px;
+  color: #c53030;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+
+.error-message.show {
+  display: flex;
+}
+
+.error-message i {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ریسپانسیو */
+@media (max-width: 480px) {
+  .login-box {
+    padding: 30px 25px;
+  }
+
+  .login-header h1 {
+    font-size: 24px;
+  }
+
+  .login-header p {
+    font-size: 14px;
+  }
+
+  .input-wrapper input {
+    padding: 14px 45px 14px 20px;
+    font-size: 15px;
+  }
+
+  .btn-login {
+    padding: 14px;
+    font-size: 15px;
+  }
+}
+
+@media (max-height: 600px) {}
